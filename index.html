@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #about {
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-image {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-photo {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category h4 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #0077b5;
+            padding-bottom: 5px;
+        }
+
+        .skill-category ul {
+            padding-left: 20px;
+        }
+
+        .skill-category li {
+            margin-bottom: 8px;
+        }
+
+        .education {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        
+        header {
+            position: uprelative;
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
+                url('project-images/pfp.jpg') center/cover no-repeat;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .header-socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .header-socials a {
+            color: white;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .header-socials a:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        #projects {
+            position: relative;
+            padding: 40px;
+            background: #f5f5f5;
+            background-size: cover;
+            background-position: center;
+            transition: background 0.5s ease;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+     
+        #projects li {
+            position: relative;
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2;
+            overflow: hidden;
+        }
+
+      
+        #projects li:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        
+        #projects li:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+     
+        #projects li:nth-child(1):hover::before {
+            background-image: url('project-images/flappy.jpg');
+        }
+
+        #projects li:nth-child(2):hover::before {
+            background-image: url('project-images/webchat.jpg');
+        }
+
+        #projects li:nth-child(3):hover::before {
+            background-image: url('project-images/nn.jpg');
+        }
+
+        #projects li:hover strong,
+        #projects li:hover p,
+        #projects li:hover .project-links {
+            position: relative;
+            z-index: 3;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Vanshdeep Singh</h1>
+        <p>UG at IIT Mandi<br>
+            Mathematics and Computing</p>
+
+        <div class="header-socials">
+            <a href="https://leetcode.com/u/Vanshdeep_S" target="_blank" title="LeetCode">
+                <i class="fas fa-code"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/vanshdeep-singh-34a122325" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Vansh-4201" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/_v.ans.h_" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="education-panel">
+                <div class="education-card">
+                    <div class="education-header">
+                        <img src="project-images\logo.png" alt="IIT Mandi Logo" class="institute-logo">
+                        <div class="institute-info">
+                            <h3>Indian Institute of Technology Mandi</h3>
+                            <p>Mathematics and Computing | 2023 - Present</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="education-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <div>
+                                    <h4>About Me</h4>
+                                    <p>
+                                        Undergraduate scholar pursuing a B.Tech in Mathematics and Computing at IIT
+                                        Mandi (2023-2027).I have keen Interests in the field of software development, and Programming
+                                        languages such as Python, C++, ROS, HTML, CSS and many more!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <i class="fas fa-book"></i>
+                                <div>
+                                    <h4>Relevant Coursework</h4>
+                                    <div class="coursework-tags">
+                                        <span>Data Structures and Algorithms</span>
+                                        <span>Machine Learning</span>
+                                        <span>Mathematical Foundations of CS</span>
+                                        <span>Statistical Learning</span>
+                                        <span>Probability & Statistics</span>
+                                        <span>Numerical Analysis</span>
+                                        <span>Mathematical Programming</span>
+                                        <span>Computer Architecture</span>
+
+
+                                        <span>Linear Algebra</span>
+                                        <span> Automata Theory</span>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <i class="fas fa-flask"></i>
+                                <div>
+                                    <h4>Research Interests</h4>
+                                    <p>Physics-Informed Neural Networks, Scientific Computing, Algorithm Design</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="achievements">
+                            <h4><i class="fas fa-trophy"></i> Other Achievements</h4>
+                            <ul>
+                                <li>Featured in DAINIK BHASKAR for exceptional development in Solar-powered UAV drone.
+                                </li>
+                                <li>Acted as a key Organiser/Host in several intra-campus events.</li>
+                                <li>Inter-IIT athlete; achieved top positions (1st and runner-up) across multiple
+                                    inter-college sporting events.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #workshops {
+            position: relative;
+            padding: 40px;
+            background:
+                linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)),
+                url('workshop-bg.jpg') center/cover no-repeat;
+            border-radius: 12px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .workshop-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .workshop-list li {
+            position: relative;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(2px);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .workshop-list li:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .workshop-list li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('project-images/prayas.jpg') center/cover no-repeat;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .workshop-list li:hover::before {
+            opacity: 0.3;
+        }
+
+        .workshop-date {
+            display: block;
+            color: #0077b5;
+            font-size: 0.9rem;
+            margin: 5px 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .workshop-list li:hover .workshop-date {
+            color: #005a8c;
+        }
+
+        .workshop-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #000000;
+            transition: color 0.3s ease;
+        }
+
+        .workshop-list li:hover .workshop-description {
+            color: #000000;
+        }
+
+        .workshop-skills span {
+            background: rgba(0, 119, 181, 0.1);
+            color: #0077b5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .workshop-list li:hover .workshop-skills span {
+            background: rgba(0, 119, 181, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .project-links a {
+            margin-right: 15px;
+            color: #0077b5;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .workshop-list li:hover .project-links a {
+            color: #005a8c;
+            transform: translateX(3px);
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        .education-panel {
+            flex: 2;
+            min-width: 300px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .education-header {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .institute-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: white;
+            padding: 5px;
+        }
+
+        .institute-info h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .institute-info p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .education-content {
+            padding: 25px;
+        }
+
+        .education-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .detail-item i {
+            color: #0077b5;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .detail-item h4 {
+            margin: 0 0 8px 0;
+            color: #333;
+        }
+
+        .detail-item p {
+            margin: 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .coursework-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .coursework-tags span {
+            background: rgba(0, 119, 181, 0.1);
+            color: #0077b5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .coursework-tags span:hover {
+            background: #0077b5;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .achievements {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .achievements h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .achievements i {
+            color: #0077b5;
+        }
+
+        .achievements ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .achievements li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .education-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .institute-logo {
+                margin-bottom: 10px;
+            }
+
+            .education-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <strong>FLAPPY-BIRD-GAME</strong> - Built a Flappy Bird game using HTML, CSS, and JavaScript with smooth
+                animations, obstacle generation, and real-time score tracking.
+                <div class="project-links">
+                    <a href="https://github.com/Vansh-4201/FLAPPY-BIRD" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <strong>WEB-CHAT-APP</strong> - Built a functional web chat app using Python for the backend and
+                HTML/CSS
+                for the frontend. The application allows real-time messaging between users through a simple, clean
+                interface. Focused on creating a smooth user experience with minimal dependencies and clear backend
+                logic.
+                <div class="project-links">
+                    <a href="https://github.com/Vansh-4201/WEB-CHAT" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <strong>NEURAL-NETWORK-MODEL</strong> - Designed a TensorFlow-based neural network to solve second-order
+                differential equations using physics-informed loss functions. Built custom loss layers with automatic
+                differentiation and trained using Adam optimizer with decay over 50,000+ iterations.
+                <div class="project-links">
+                    <a href="https://github.com/Vansh-4201/pinn-de-solver" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="workshops">
+        <h2>Seminars / Trainings / Workshops</h2>
+        <ul class="workshop-list">
+            <li>
+                <strong>PRAYAS 3.0 Workshop</strong> -
+                <span class="workshop-date">10 Jun 2025 - 12 Jul 2025 | IIT Mandi</span>
+                <p class="workshop-description">
+                    As an organizer and teaching assistant for PRAYAS 3.0 at IIT Mandi, I played a key role in managing
+                    the smooth execution of the event while actively mentoring participants in hands-on sessions.
+                </p>
+                <div class="workshop-skills">
+                    <span>Robotics</span>
+                    <span>ROS</span>
+                    <span>Management</span>
+                    <span>C++</span>
+                    <span>Organizing</span>
+                </div>
+
+            </li>
+        </ul>
+    </section>
+    <section id="personal-info">
+        <h2>Personal Information</h2>
+        <div class="personal-info-card"
+            style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 24px; margin: 30px 0;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>
+                    <strong>Email:</strong>
+                    <a href="https://mail.google.com/mail/?view=cm&to=singhvanshdeep670@gmail.com" target="_blank"
+                        class="email-link">
+                        singhvanshdeep670@gmail.com
+                    </a>
+                </li>
+                <li><strong>Phone:</strong> +91-7696197660</li>
+                <li>
+                    <strong>Location:</strong>
+                    <a href="https://www.iitmandi.ac.in/" target="_blank" class="location-link">
+                        IIT Mandi, Himachal Pradesh, India
+                    </a>
+                </li>
+                <li><strong>Languages:</strong> English, Hindi, Punjabi</li>
+                <li><strong>Interests:</strong> Programming, Robotics, Sports, Reading</li>
+            </ul>
+        </div>
+    </section>
+
+    <style>
+        .personal-info-card .location-link {
+            color: #0077b5;
+            text-decoration: none;
+            transition: color 0.2s, text-decoration 0.2s;
+        }
+
+        .personal-info-card .location-link:hover {
+            color: #d44638;
+            text-decoration: underline;
+        }
+
+        .personal-info-card .email-link {
+            color: #0077b5;
+            text-decoration: none;
+            transition: color 0.2s, text-decoration 0.2s;
+        }
+
+        .personal-info-card .email-link:hover {
+            color: #d44638;
+            text-decoration: underline;
+        }
+    </style>
+
+    <style>
+        .footer-hover-info {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .footer-tooltip.footer-tooltip-sideways {
+            visibility: hidden;
+            opacity: 0;
+            background: linear-gradient(90deg, #00c6ff 0%, #0077b5 100%);
+            color: #fff;
+            text-align: center;
+            border-radius: 16px;
+            padding: 18px 24px 14px 24px;
+            position: absolute;
+            left: 50%;
+            bottom: 120%;
+            transform: translateX(-50%);
+            z-index: 10;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            font-size: 1rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+            pointer-events: none;
+            border: 2px solid #fff;
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            align-items: center;
+            min-width: 0;
+            min-height: 70px;
+        }
+
+        .footer-hover-info:hover .footer-tooltip,
+        .footer-hover-info:focus-within .footer-tooltip {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(-8px) scale(1.03);
+            transition-delay: 0s, 0s, 0s;
+
+        }
+
+        .footer-hover-info .footer-tooltip {
+            transition-delay: 0.1s, 0.1s, 0.1s;
+        }
+
+        .tooltip-sideways-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.10);
+            border-radius: 12px;
+            padding: 10px 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        }
+
+        .tooltip-sideways-item i {
+            font-size: 1.4em;
+            color: #fffbe7;
+            min-width: 22px;
+            transition: color 0.2s;
+        }
+
+        .tooltip-link {
+            margin-left: 8px;
+            background: #fff;
+            color: #0077b5;
+            padding: 3px 12px;
+            border-radius: 14px;
+            font-size: 0.95em;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 119, 181, 0.08);
+            font-weight: 500;
+        }
+
+        .tooltip-link:hover {
+            background: #0077b5;
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .tooltip-value {
+            color: #ffe066;
+            font-weight: bold;
+            font-size: 1.08em;
+            margin-left: 2px;
+        }
+
+        .footer-tooltip strong {
+            font-weight: 600;
+        }
+
+        .footer-main-text {
+            font-weight: 500;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+        }
+    </style>
